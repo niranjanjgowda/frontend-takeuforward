@@ -69,3 +69,14 @@ textarea.form-input {
 .submit-button:hover {
   background-color: #0056b3;
 }
+
+.question-cards{
+  border: 3px solid #f4f4f4;
+  border-radius: 5px;
+  padding: 20px 10px;
+  cursor: pointer;
+}
+
+.submit-container{
+  width: 90vw;
+}

@@ -6,15 +6,16 @@ function Submissions() {
   const [submissions, setSubmissions] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const submissionsURL = process.env.REACT_APP_SUBMISSIONS_URL;
 
   useEffect(() => {
     const fetchSubmissions = async () => {
       try {
-        const response = await axios.get('https://backend-takeuforward.vercel.app/submissions');
+        const response = await axios.get(submissionsURL);
         setSubmissions(response.data);
         setLoading(false);
       } catch (err) {
-        setError(err.message);
+        setError("loda");
         setLoading(false);
       }
     };
@@ -40,6 +41,7 @@ function Submissions() {
             <th>Language</th>
             <th>Standard Input</th>
             <th>Source Code</th>
+            <th>Compile Log</th>
           </tr>
         </thead>
         <tbody>
@@ -49,6 +51,7 @@ function Submissions() {
               <td>{submission.language}</td>
               <td>{submission.stdin}</td>
               <td>{submission.source_code.slice(0, 100)}...</td>
+              <td>{submission.compilelog}</td>
             </tr>
           ))}
         </tbody>
