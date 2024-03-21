@@ -8,8 +8,6 @@
 }
 
 .form-container {
-  max-width: 1200px;
-  width: 100%;
   background-color: #f4f4f4;
   padding: 2rem;
   border-radius: 8px;
@@ -79,4 +77,27 @@ textarea.form-input {
 
 .submit-container{
   width: 90vw;
+}
+
+.btn-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-container a{
+  text-decoration: none;
+}
+
+.btn-container button,
+.btn-container a{
+  display: block;
+  padding: 0.75rem;
+  font-size: 1rem;
+  background-color: green;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }

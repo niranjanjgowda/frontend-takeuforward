@@ -14,7 +14,7 @@ function App() {
   const handleLanguageChange = (e) => {
     const selectedLanguage = e.target.value;
     setLanguage(selectedLanguage);
-    
+
     let boilerplate = '';
     switch (selectedLanguage) {
       case 'C++':
@@ -99,12 +99,15 @@ function App() {
         </div>
       ) : (
         <div className='submit-container'>
+          <div className='btn-container'>
+            <button onClick={() => setSelectedQuestion(null)}> &lt; Questions</button>
+            <h1>Take u forward</h1>
+            <Link to="/submissions" className="view-submissions-button">
+              View All Submissions
+            </Link>
+          </div>
           <h3>{questions[selectedQuestion - 1].title}</h3>
           <p>{questions[selectedQuestion - 1].description}</p>
-          <button onClick={() => setSelectedQuestion(null)}>back to questions</button>
-          <Link to="/submissions" className="view-submissions-button">
-            View All Submissions
-          </Link>
           <div className="form-container">
             <div className="left-section">
               <form onSubmit={handleSubmit}>
